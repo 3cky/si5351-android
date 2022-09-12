@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2022 Victor Antonovich <v.antonovich@gmail.com>
+  ~
+  ~  This work is free software; you can redistribute it and/or
+  ~  modify it under the terms of the GNU Lesser General Public License
+  ~  as published by the Free Software Foundation; either version 2.1
+  ~  of the License, or (at your option) any later version.
+  ~
+  ~  This work is distributed in the hope that it will be useful, but
+  ~  without any warranty; without even the implied warranty of merchantability
+  ~  or fitness for a particular purpose. See the GNU Lesser General Public
+  ~  License for more details.
+  ~
+  ~  You should have received a copy of the GNU Lesser General Public License
+  ~  along with this library; if not, write to the Free Software Foundation, Inc.,
+  ~  59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
+  -->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/status_text"
+        android:layout_alignParentTop="true"
+        tools:context=".MainActivity">
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/controls_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:columnCount="2"
+            app:orientation="horizontal"
+            app:useDefaultMargins="true">
+
+            <include layout="@layout/clock"
+                android:id="@+id/clk0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_columnWeight="1" />
+
+            <include layout="@layout/clock"
+                android:id="@+id/clk1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_columnWeight="1" />
+
+            <include layout="@layout/clock"
+                android:id="@+id/clk2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_columnWeight="1"
+                app:layout_columnSpan="1" />
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_columnWeight="1"
+                app:columnCount="2"
+                app:orientation="horizontal"
+                android:padding="@dimen/default_gap">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:text="@string/freq_correction_label"
+                    android:textSize="@dimen/textSize"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="center_vertical" />
+
+                <com.github.ykc3.android.widget.decimalnumberpicker.DecimalNumberPicker
+                    android:id="@+id/freq_correction_picker"
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    app:maxValue="1000"
+                    app:minValue="-1000"
+                    app:textSize="@dimen/textSize"
+                    app:value="0"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="center_vertical" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:text="@string/pll_a_locked_label"
+                    android:textSize="@dimen/textSize"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="center_vertical" />
+
+                <CheckBox
+                    android:id="@+id/pll_a_locked_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    app:layout_columnWeight="2"
+                    app:layout_gravity="left" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/pll_b_locked_label"
+                    android:textSize="@dimen/textSize"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="center_vertical" />
+
+                <CheckBox
+                    android:id="@+id/pll_b_locked_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="left" />
+            </androidx.gridlayout.widget.GridLayout>
+
+        </androidx.gridlayout.widget.GridLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/status_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/statusHeight"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="@string/adapter_not_found" />
+
+</RelativeLayout>

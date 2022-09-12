@@ -1,0 +1,35 @@
+<!--
+  ~ Copyright (c) 2022 Victor Antonovich <v.antonovich@gmail.com>
+  ~
+  ~  This work is free software; you can redistribute it and/or
+  ~  modify it under the terms of the GNU Lesser General Public License
+  ~  as published by the Free Software Foundation; either version 2.1
+  ~  of the License, or (at your option) any later version.
+  ~
+  ~  This work is distributed in the hope that it will be useful, but
+  ~  without any warranty; without even the implied warranty of merchantability
+  ~  or fitness for a particular purpose. See the GNU Lesser General Public
+  ~  License for more details.
+  ~
+  ~  You should have received a copy of the GNU Lesser General Public License
+  ~  along with this library; if not, write to the Free Software Foundation, Inc.,
+  ~  59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
+  -->
+
+<resources>
+    <string name="app_name">si5351-android</string>
+    <string name="adapter_permission_denied">USB permission denied</string>
+    <string name="adapter_not_found">No supported USB I²C adapters found</string>
+    <string name="adapter_open_error">Can\'t open USB I²C adapter</string>
+    <string name="si5351_not_found">Si5351 is not found</string>
+    <string name="si5351_found">Si5351 initialized</string>
+    <string name="clk_label">CLK%1$d</string>
+    <string name="clk_enable_output_label">Enable output</string>
+    <string name="clk_frequency_label">Frequency, kHz</string>
+    <string name="freq_correction_label">Frequency correction, PPM</string>
+    <string name="pll_a_locked_label">PLL A locked</string>
+    <string name="pll_b_locked_label">PLL B locked</string>
+    <string name="yes">Yes</string>
+    <string name="no">NO</string>
+    <string name="clk_drive_strength_label">Drive strength, mA</string>
+</resources>
